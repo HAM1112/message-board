@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title  
+  p Welcome to #{title}
+
+  div(class="main")
+    each message in  messages
+      div(class="message-card")
+        h2 #{message.user}
+        p #{message.text}
+        span #{message.added.getDate()} #{message.added.getMonth()} #{message.added.getFullYear()}
+
+  

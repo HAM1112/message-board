@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  form(action="/new", method="POST") 
+    p 
+        | User : 
+        input(type="text", name="user")
+        | Year :
+        input(type="text", name="year")
+    input(type="submit")
