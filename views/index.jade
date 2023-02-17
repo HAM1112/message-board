@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  h1= title  
-  p Welcome to #{title}
+  h1(class="heading")= title  
 
   div(class="main")
+    h2 Messages
     each message in  messages
       div(class="message-card")
         h2 #{message.user}
         p #{message.text}
-        span #{message.added.getDate()} #{message.added.getMonth()} #{message.added.getFullYear()}
+        div(class='date') #{message.added.getDate()} #{message.added.getMonth()} #{message.added.getFullYear()}
+    button(class="add-button" onclick="location.href='/new'" ) New Message
 
-  button(onclick="location.href='/new'" ) New Message

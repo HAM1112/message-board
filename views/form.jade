@@ -5,16 +5,16 @@ block content
     function move() {
         window.location.href = '/'
     }
-
-  form(action="/new", method="POST") 
-    h2= title 
-    p 
-        | User : 
-        input(type="text", name="user")
-        | Text :
-        input(type="text", name="text")
-    button(type='submit') Add
-    
-  button(onclick="move()") Cancel
-    
-  h2=error 
+  div(class="form-div") 
+    form(class="form" action="/new" method="POST") 
+      h2= title 
+      div 
+          | User : 
+          input(type="text" name="user" placeholder="Name")
+      div  
+          textarea(name="text", cols="30", rows="7", placeholder="Enter your message here...")
+      button(type='submit' class="submit-button") Add
+      
+    button(onclick="move()" class="cancel-button") Cancel
+      
+    h2(class="error")=error 
